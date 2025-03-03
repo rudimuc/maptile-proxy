@@ -48,12 +48,9 @@
           $url .= "/arcgis/rest/services/World_Imagery/MapServer/tile/".$z."/".$y."/".$x;
           break;
         case 'here':
-          $server[] = '1.base.maps.ls.hereapi.com';
-          $server[] = '2.base.maps.ls.hereapi.com';
-          $server[] = '3.base.maps.ls.hereapi.com';
-          $server[] = '4.base.maps.ls.hereapi.com';
+          $server[] = 'maps.hereapi.com';
           $url = 'https://'.$server[array_rand($server)];
-          $url .= "/maptile/2.1/maptile/newest/normal.day/".$z."/".$x."/".$y."/256/png8?apiKey=REPLACEWITHYOUROWNAPIKEY&ppi=72&lg=ger"; // TODO: fill in your API key and desired language
+          $url .= "/v3/base/mc/".$z."/".$x."/".$y."/png8?style=explore.day&apiKey=REPLACEWITHYOUROWNAPIKEY"; // TODO: fill in your API key and desired language
           break;
         case 'google':
           $server[] = 'mt0.google.com/vt';
